@@ -35,7 +35,9 @@ $result = mysqli_query($mysqli, $query);
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f7; /* Background abu-biru lembut */
+            /* Background gradasi dinamis agar tidak putih polos */
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
+            background-attachment: fixed;
             color: #333;
             padding: 40px 20px;
         }
@@ -47,20 +49,20 @@ $result = mysqli_query($mysqli, $query);
             background-color: #ffffff;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* Header */
         .main-header {
             margin-bottom: 25px;
-            border-bottom: 3px solid #3b82f6; /* Garis bawah biru */
+            border-bottom: 3px solid #3b82f6;
             padding-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
         .main-header h2 {
-            color: #1e3a8a; /* Biru gelap modern */
+            color: #1e3a8a;
             font-size: 24px;
             font-weight: 700;
         }
@@ -85,7 +87,7 @@ $result = mysqli_query($mysqli, $query);
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background-color: #2563eb; /* Biru cerah */
+            background-color: #2563eb;
             color: white;
             text-decoration: none;
             border-radius: 6px;
@@ -156,9 +158,9 @@ $result = mysqli_query($mysqli, $query);
             overflow: hidden;
         }
         
-        /* Table Header Berwarna Biru Maskulin */
+        /* Table Header */
         th {
-            background-color: #1e40af; /* Royal Blue */
+            background-color: #1e40af;
             color: white;
             font-size: 14px;
             font-weight: 600;
@@ -167,7 +169,7 @@ $result = mysqli_query($mysqli, $query);
             letter-spacing: 0.5px;
         }
 
-        /* Table Body & Grid */
+        /* Table Body */
         td {
             padding: 16px;
             border-bottom: 1px solid #e2e8f0;
@@ -175,12 +177,12 @@ $result = mysqli_query($mysqli, $query);
             font-size: 15px;
         }
         
-        /* Zebra Striping (Variasi Biru Lembut) */
+        /* Zebra Striping */
         tr:nth-child(even) td {
             background-color: #f8fafc;
         }
         tr:hover td {
-            background-color: #e0f2fe; /* Highlight biru muda saat di-hover */
+            background-color: #e0f2fe; /* Efek highlight biru muda saat hover */
         }
 
         /* Kolom Ikon Medis */
@@ -201,7 +203,7 @@ $result = mysqli_query($mysqli, $query);
             font-size: 14px;
         }
 
-        /* Action Links Inside Table */
+        /* Action Links */
         .actions a {
             text-decoration: none;
             font-size: 13px;
@@ -249,7 +251,8 @@ $result = mysqli_query($mysqli, $query);
 
 <div class="container">
     <div class="main-header">
-        <i class="fa-solid fa-heart-pulse"></i> <h2>Sistem Informasi Manajemen RS - Data Alat Elektromedis</h2>
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h2>Sistem Informasi Manajemen RS - Data Alat Elektromedis</h2>
     </div>
 
     <div class="top-bar">
@@ -286,7 +289,8 @@ $result = mysqli_query($mysqli, $query);
                         echo "<tr>";
                         echo "<td>
                                 <div class='alat-name-wrapper'>
-                                    <div class='alat-icon'><i class='fa-solid fa-stethoscope'></i></div> <strong>".$user_data['nama_alat']."</strong>
+                                    <div class='alat-icon'><i class='fa-solid fa-stethoscope'></i></div>
+                                    <strong>".$user_data['nama_alat']."</strong>
                                 </div>
                               </td>";
                         echo "<td><i class='fa-regular fa-calendar-days' style='color:#64748b; margin-right:5px;'></i>".$user_data['tahun']."</td>";
